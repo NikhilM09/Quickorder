@@ -3,6 +3,7 @@ import { createUrl, extractResId } from "../utils/helper";
 import { useEffect, useState } from "react";
 import Category from "./Category";
 import Restaurantcard from "./Restaurantcard";
+import NestedCategory from "./NestedCategory";
 
 const Menu = () =>{
     const params = useParams();
@@ -43,7 +44,7 @@ const Menu = () =>{
         return <h1>Loading.......</h1>
     }
     return (
-        <div>
+        <div className="w-10/12 flex flex-col gap-8 mx-auto max-w-4xl">
             <Restaurantcard 
                 name={resInfo?.name}
                 avgRating={resInfo?.avgRating}
@@ -59,6 +60,16 @@ const Menu = () =>{
                     />
                 )
               } )  
+            }
+            {
+                nestedMenu.map((nestedCategory)=>{
+                    return(
+                        <NestedCategory
+                            mainCategory={nestedCategory?.card?.card?.title}
+                            categoryCollection={nestedCategory?.card?.card?.categories}
+                        />
+                    )
+                })
             }
         </div>
     )
