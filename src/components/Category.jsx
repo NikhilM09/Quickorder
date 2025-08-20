@@ -10,11 +10,7 @@ const Category = ({
       {collection.map((dish) => {
         return (
           <MenuItem
-            name={dish?.card?.info?.name}
-            isVeg={dish?.card?.info?.isVeg}
-            price={dish?.card?.info?.price}
-            description={dish?.card?.info?.description}
-            imgUrl={dish?.card?.info?.imageId}
+            {...dish?.card?.info}
           />
         );
       })}

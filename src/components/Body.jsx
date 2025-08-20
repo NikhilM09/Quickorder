@@ -8,7 +8,7 @@ const Body = () => {
       This is body component
       <div className="p-3">
         <div className="flex  justify-between">
-          <Searchbar />
+          {/* <Searchbar /> */}
           <Filters />
         </div>
         <Cardcontainer />

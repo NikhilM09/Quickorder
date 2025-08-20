@@ -1,6 +1,6 @@
 import { IMG_URL } from "../utils/constants"
 
-const MenuItem = ({isVeg=1, name, price, description, imgUrl, defaultPrice}) =>{
+const MenuItem = ({isVeg=1, name, price, description, imageId, defaultPrice}) =>{
     
     return(
         <div className="flex items-center justify-between my-5 shadow-2xl rounded-xl p-3">
@@ -11,7 +11,7 @@ const MenuItem = ({isVeg=1, name, price, description, imgUrl, defaultPrice}) =>{
                 <p>{description}</p>
             </div>
             <div className="w-3/6 max-w-36">
-                <img className="w-full" src={IMG_URL+imgUrl}/>
+                <img className="w-full" src={IMG_URL+imageId}/>
             </div>
         </div>
     )
